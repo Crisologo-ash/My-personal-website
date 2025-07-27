@@ -1,0 +1,277 @@
+:root {
+  --primary: #2c7a7b;
+  --secondary: #38a169;
+  --accent: #ed8936;
+  --text-dark: #1a202c;
+  --text-light: #f7fafc;
+  --bg-light: #f0f4f8;
+  --bg-card: #ffffff;
+  --border: #e2e8f0;
+  --shadow: rgba(0, 0, 0, 0.08);
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  color: var(--text-dark);
+  background: linear-gradient(to bottom right, #1a202c, #2c7a7b),
+              url('https://wallpapers.com/images/hd/720p-sports-background-1280-x-720-q98gmhlh7odaoa0q.jpg') center/cover no-repeat fixed;
+  background-blend-mode: overlay;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+header h1 {
+  font-size: 3rem;
+  font-weight: 900;
+  color: var(--text-light);
+  text-shadow: 2px 2px 0 var(--accent), 4px 4px 8px rgba(0, 0, 0, 0.2);
+  animation: bubble-shadow 4s infinite ease-in-out;
+}
+
+main {
+  background: var(--bg-card);
+  max-width: 900px;
+  width: 100%;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px var(--shadow);
+}
+
+h2 {
+  border-left: 6px solid var(--accent);
+  padding-left: 16px;
+  font-size: 2rem;
+  margin-bottom: 24px;
+  font-weight: 900;
+  color: var(--text-light);
+  text-shadow: 2px 2px 0 var(--accent), 4px 4px 8px rgba(0, 0, 0, 0.2);
+  animation: bubble-shadow 4s infinite ease-in-out;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+ul li {
+  background: #fff;
+  margin-bottom: 20px;
+  padding: 18px 24px;
+  border-radius: 12px;
+  border-left: 6px solid var(--accent);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+
+ul li:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+  background: #fffaf3;
+}
+
+ul li a {
+  font-weight: 900;
+  font-size: 1.1rem;
+  color: var(--text-light);
+  text-decoration: none;
+  text-shadow: 2px 2px 0 var(--accent), 4px 4px 8px rgba(0, 0, 0, 0.2);
+  animation: bubble-shadow 4s infinite ease-in-out;
+  transition: color 0.2s ease;
+}
+
+ul li a:hover,
+ul li a:focus {
+  color: var(--accent);
+  text-decoration: underline;
+  animation: none;
+}
+
+footer {
+  text-align: center;
+  color: var(--text-light);
+  margin-top: 60px;
+  font-size: 0.95rem;
+}
+
+.card {
+  background-color: var(--bg-card);
+  padding: 40px;
+  border-radius: 16px;
+  max-width: 900px;
+  margin: 40px auto;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.card section {
+  margin-bottom: 32px;
+}
+
+.card ul li {
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border);
+  font-weight: 500;
+  color: var(--text-dark);
+}
+
+.profile-img {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 5px solid var(--primary);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  margin-bottom: 24px;
+}
+
+nav a {
+  font-weight: 900;
+  font-size: 1.1rem;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  color: var(--text-light);
+  text-shadow: 2px 2px 0 var(--accent), 4px 4px 8px rgba(0, 0, 0, 0.2);
+  animation: bubble-shadow 4s infinite ease-in-out;
+}
+
+nav a:hover,
+nav a:focus {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--accent);
+  text-decoration: underline;
+  animation: none;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+label {
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 6px;
+}
+
+input,
+textarea {
+  padding: 12px 16px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 1rem;
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus,
+textarea:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(44, 122, 123, 0.2);
+  outline: none;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+button[type="submit"] {
+  background-color: var(--primary);
+  color: var(--text-light);
+  padding: 14px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: var(--secondary);
+  transform: translateY(-2px);
+}
+
+button {
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* ✨ Bubble Shadow Animation */
+@keyframes bubble-shadow {
+  0% {
+    text-shadow: 2px 2px 0 var(--accent), 4px 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  50% {
+    text-shadow: 2px 2px 0 var(--secondary), 4px 4px 12px rgba(0, 0, 0, 0.25);
+  }
+  100% {
+    text-shadow: 2px 2px 0 var(--accent), 4px 4px 8px rgba(0, 0, 0, 0.2);
+  }
+}
+
+/* --- Back Button Styles --- */
+.back-button,
+.back-button-top,
+.back-button-bottom {
+  display: inline-block;
+  background-color: var(--primary);
+  color: var(--text-light);
+  padding: 10px 20px;
+  margin: 20px auto;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  cursor: pointer;
+  border: none;
+  text-align: center;
+}
+
+.back-button-top {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.back-button:hover,
+.back-button-top:hover,
+.back-button-bottom:hover {
+  background-color: var(--secondary);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-container,
+#container,
+body {
+  text-align: center;
+}
+
+.full-width-button {
+  display: block;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}

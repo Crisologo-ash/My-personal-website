@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Contact Me</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="card">
+      <section>
+        <h2>📬 Get in Touch</h2>
+        <form id="contactForm">
+          <!-- Name Field -->
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required />
+
+          <!-- Email Field -->
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required />
+
+          <!-- Phone Field -->
+          <label for="phone">Phone:</label>
+          <input
+            type="tel"
+            id="phone"
+            name="phone"
+            placeholder="09123456789"
+            pattern="^09\d{9}$"
+            required
+          />
+          <small style="color: var(--text-dark); font-size: 0.85rem;">
+            Format: 11 digits, starts with 09 (e.g. 09123456789)
+          </small>
+
+          <!-- Message Field -->
+          <label for="message">Message:</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+
+          <!-- Submit Button -->
+          <button type="submit">Send Message</button>
+        </form>
+      </section>
+    </div>
+  </main>
+
+  <!-- ✅ Script for phone cleanup and feedback -->
+  <script>
+    const form = document.getElementById("contactForm");
+    const phoneInput = document.getElementById("phone");
+
+    // Auto-remove spaces in phone field
+    phoneInput.addEventListener("input", function () {
+      this.value = this.value.replace(/\s+/g, "");
+    });
+
+    // Handle form submission
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const phone = phoneInput.value.trim();
+      const message = document.getElementById("message").value.trim();
+
+      // Validate required fields
+      if (!name || !email || !phone || !message) {
+        alert("⚠️ Please fill in all fields.");
+        return;
+      }
+
+      // Validate phone number
+      if (!/^09\d{9}$/.test(phone)) {
+        alert("📱 Please enter a valid phone number (e.g. 09123456789)");
+        return;
+      }
+
+      // Simulated success
+      alert("✅ Thank you! Your message has been sent.");
+      form.reset();
+    });
+  </script>
+</body>
+</html>
